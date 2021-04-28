@@ -34,6 +34,8 @@ console.log("Щелчок на третьей вкладке!");
     return false;
 })
 })
+    $(".tabs a:first-child span").trigger("click");
+
 })
 
 
