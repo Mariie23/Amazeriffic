@@ -29,7 +29,19 @@ $content.append($("<li>").text(todo));
 });
 $("main .content").append($content);
 } else if ($element.parent().is(":nth-child(3)")) {
-console.log("Щелчок на третьей вкладке!");
+    $(".content").append(
+                '<input type="text" class="inp">'+
+                '<button class="btn">Добавить</button>'
+            );
+            var newToDo;
+            $('.btn').on('click',function(){
+                newToDo= $('.inp').val();
+                if (newToDo!='') {
+                    toDos.push( newToDo);
+                    alert('Новое задание "'+newToDo+'" успешно добавлено!');
+                    $('.inp').val("");
+                }
+            })
 }
     return false;
 })
