@@ -1,13 +1,14 @@
 var main = function () {
 "use strict";
-$(".tabs a span").toArray().forEach(function (element) {
-//создаем обработчик щелчков для этого элемента
-$(element).on("click", function () {
-$(".tabs a span").removeClass("active");
-$(element).addClass("active");
-$("main .content").empty();
-return false;
-});
-});
+var toDos = [
+"Закончить писать эту книгу",
+"Вывести Грейси на прогулку в парк",
+"Ответить на электронные письма",
+"Подготовиться к лекции в понедельник",
+"Обновить несколько новых задач",
+"Купить продукты"
+];
+//... все остальное, относящееся к вкладкам
 };
+
 
