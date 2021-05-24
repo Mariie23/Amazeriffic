@@ -1,12 +1,11 @@
-"use strict";
-var toDos = [
-"Закончить писать эту книгу",
-"Вывести Грейси на прогулку в парк",
-"Ответить на электронные письма",
-"Подготовиться к лекции в понедельник",
-"Обновить несколько новых задач",
-"Купить продукты"
-];
+var main = function (toDoObjects){
+    "use strict";
+    var toDos = toDoObjects.map(function (toDo) {
+        // просто возвращаем описание
+        // этой задачи
+        return toDo.description;
+    });
+    // сейчас весь старый код должен работать в точности как раньше!
 //... все остальное, относящееся к вкладкам
 $("document").ready( function(){
 $(".tabs a span").toArray().forEach(function (element) {
@@ -49,6 +48,12 @@ $("main .content").append($content);
     $(".tabs a:first-child span").trigger("click");
 
 })
-
+};
+$(document).ready(function () {
+    $.getJSON("todos.json", function (toDoObjects) {
+    // вызов функции main с аргументом в виде объекта toDoObjects
+        main(toDoObjects);
+    });
+});
 
 
